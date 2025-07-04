@@ -334,3 +334,176 @@ a = 12
 - suppose at line 10 we wrote `var a = 12`, so there it gets initialized
 - Use `const` by default. Use `let` only when you plan to change the value.
 - Avoid `var` — it belongs to the past.
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Data types
+- In JavaScript, every value has a type.
+- These types define what kind of data is being stored — a number, text, boolean, object, etc.
+- There are two categories:
+  - Primitive 
+    – stored directly.
+    - already made we just copy them
+    - copy the values of the variable
+    - so everyone has their own values 
+  - Reference 
+    - stored as memory references.
+    - values with brackets `()`, `{}`, `[]`
+    - does not copy value, copies the pointer to location, (reference)
+    - These are not copied directly, but by reference.
+    - Every one has values put points to one location 
+    - so doing changes in one variable changes all the other values
+
+
+### Primitive Data types 
+- `string`    : text, Eg: 'hello'', "Sumit", `JavaScript`, etc
+- `Number`    : numeric value, Eg: 3, 4, -99, 3.1415, etc
+- `Boolean`   : true / false
+- `undefined` : value declared but not assigned, `let x`, here `x` is undefined
+- `null`      : Intentional empty value, `let x = null`
+- `Symbol`    : Unique identifier (rarely used)
+- `BigInt`    : Very large integers `let y = 123456789012345678901234567890n`
+
+
+#### Reference Data types 
+- Object `{}`, Array `[]`, function `()`
+- `Object` : `{ name: "Harsh", age: 26 }`
+- `Array` : `[10, 20, 30]`
+- `Function` : `function greet() {}`
+
+
+### String
+- `''`: single quotes  
+- `""`: double quotes  
+- ``` `` ```: backticks
+
+```js
+let naam = 'sumitjha'
+let gender = `male`
+let lastname = "jha"
+```
+
+
+### Numeric value
+- some decimal, whole number, integer, negative positive, all
+
+```js
+let a = 10
+let b = -100
+let c = 3.532
+let d = -45.234
+```
+
+### Boolean 
+- `true` or `false` value
+
+```js
+let isOnline = true
+let isTyping = false
+```
+
+### null
+- not given the value yet, but need to give value
+- suppose a subject is to be choosen, mandatorily, but currently want to just no decide it
+
+### undefined 
+- by default value is called undefined 
+- `undefined` -> not defined
+- so if we just make the value and not assign it => `undefined`
+- undefined is given by JS engine
+- `null` is assigned by user
+- NaN stands for "Not-a-Number", and it's a special value that represents an undefined or unrepresentable numeric result. It's a property of the global object and is of type number.
+
+```js
+let currentSubject = null   // need to take value, but now
+let quirks = undefined      // undefined (given by user)
+let profilePicture          // undefined
+```
+
+<br>
+<br>
+
+<img src='images/null vs undefined vs 0 vs NaN.png' width=600>
+
+<br>
+<br>
+
+
+### Symbol
+- unique `immutable` value
+- Symbol is unique value identifier, for specific pointing (referencing)
+- libraries used sometimes are changed when trying to change the values, there we can use the Symbol for making distinct variable, so does not overwrite the Symbol
+
+```js
+// Symbol
+let person1 = 'Sumit'
+let person2 = 'Sumit'
+let person3 = Symbol('Sumit')
+let person4 = Symbol('Sumit')
+
+console.log(person1 === person2)  // true (since simple values are types compared)
+console.log(person3 === person4)  // false (Specific instance of creation is checked)
+
+
+let obj = {
+    uid: 1,
+    name: "Sumit", 
+    age: 24, 
+    email: "sumitjha1618@gmail.com"
+}
+
+console.log(obj)
+console.log(obj.uid)
+
+let u1 = Symbol("uid")
+obj[u1] = 200
+
+console.log(obj[u1])
+```
+
+
+### BigInt
+- `Number.MAX_SAFE_INTEGER`: safe number that gives proper holding
+- more than the `Number.MAX_SAFE_INTEGER` gives precision issues
+- value more than 9007199254740991 we take BigInt, in BigInt and put n at end
+- change in this values needs other to be BigInt as well (so put n at end)
+
+
+```js
+console.log(Number.MAX_SAFE_INTEGER) // 9007199254740991
+
+let piggyBank = 12324565789000000000000n
+piggyBank += 4n
+console.log(piggyBank)              // 12324565789000000000004n
+```
+
+### Reference in (Non-Primitive Data Types)
+- reference -> some pointer pointing to the original value is given 
+- new variable takes the address of the old variable (not a copy)
+- so changing new variable changes the old variable as well
+
+
+```js
+let selectedPlayers = [1, 2, 3, 7, 9, 10, 11]
+let goingToTournament = selectedPlayers
+
+goingToTournament.pop() // player #11 was removed 
+console.log(goingToTournament)      // [ 1, 2, 3, 7, 9, 10 ]
+console.log(selectedPlayers)        // [ 1, 2, 3, 7, 9, 10 ]
+
+
+let object = {
+    name: 'Cat'
+}
+
+let animal = object
+animal.name = 'Dog'
+
+console.log(animal.name)    // Dog
+console.log(object.name)    // Dog but object was named cat, still changed
+```
+
