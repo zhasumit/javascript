@@ -507,3 +507,82 @@ console.log(animal.name)    // Dog
 console.log(object.name)    // Dog but object was named cat, still changed
 ```
 
+<br>
+<br>
+
+### Dynamic typing
+- dont need to specify the data type of the variable 
+- change the data further on in the variable 
+- static typing is better than dynamic
+- data types should be static for good programming/error handlings
+
+```cpp
+int a = 2;    // integer data type 
+a = "Sumit";  // cannot change the data type
+```
+
+```js
+let a = 2   // integer/number data type
+a = true    // data type is changed into boolean
+```
+
+### typeof keyword
+- check the data type using the typeof keyword
+- this keyword gives the typeof data used 
+
+```js
+let name = "Sumit Kumar Jha";
+let age = 24;
+let isOnline = false;
+let hasDisorders; // undefined
+let kids = null; // not now but later in future
+let friend = Symbol("sushmita");
+let totalkarma = 123456789012345678901234567890n
+
+console.log(typeof name)            // string
+console.log(typeof age)             // number
+console.log(typeof isOnline)        // boolean
+console.log(typeof hasDisorders)    // undefined
+console.log(typeof kids)            // object
+console.log(typeof friend)          // symbol
+console.log(typeof totalkarma)      // bigint
+console.log(typeof {})              // object
+console.log(typeof [])              // object
+```
+
+### typeof quirks (eg: typeof null = 'object')
+- check the type of quirks 
+- `typeof null` is `object`, known bug
+- `typeof NaN` is `number`, but NaN means not a number
+- `NaN === NaN` is false, since two things that are number, not necassarily are same.
+
+```js
+console.log(typeof null)        // object
+console.log(typeof NaN)         // number
+console.log(NaN === NaN)        // false
+
+console.log(.1 + .2)            // 0.30000000000000004
+console.log([] + [])            // ''
+
+console.log('' + "")            // "" blank string
+console.log(1 + "")             // 1 in number data type
+console.log(1 + "1")            // "11" in string data type
+
+console.log(1 == "1")           // true
+console.log(1 === "1")          // false
+```
+
+<br>
+<br>
+
+### Type Coercion (== vs ===)
+- converting one data type into another data type 
+- `"5" + 1`: `"51"`, `+` adds and does concatenatation of the values 
+- why : if any value is "string" then js thinks of concatenation, so add is not done
+- but `-` sign does just one thing, substract the values so `"5" - 1` = `4`
+
+<br>
+<br>
+
+### Truthy falsy values
+- 
