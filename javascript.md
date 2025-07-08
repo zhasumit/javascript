@@ -280,6 +280,9 @@ abcd()
 // console.log(answer) // error
 ```
 
+<img src="./images/varletconst.png" width=600>
+
+
 <br>
 <br>
 
@@ -297,6 +300,9 @@ console.log(a);
 let a = 20;
 // ReferenceError: Cannot access 'a' before initialization
 ```
+
+<img src="./images/temporaldeadzone.png" width=600>
+
 
 <br>
 <br>
@@ -319,6 +325,7 @@ let a = 20;
     console.log(age);
 }
 ```
+<img src="./images/hoisting summary.webp" width=600>
 
 
 ### why `var` gives undefined
@@ -358,6 +365,7 @@ a = 12
     - Every one has values put points to one location 
     - so doing changes in one variable changes all the other values
 
+<img src="./images/datatypesinjs.png" width=600>
 
 ### Primitive Data types 
 - `string`    : text, Eg: 'hello'', "Sumit", `JavaScript`, etc
@@ -385,6 +393,14 @@ a = 12
 let naam = 'sumitjha'
 let gender = `male`
 let lastname = "jha"
+
+// in double backticks the string can be multiline
+`Hello, 
+I am Sumit Kumar Jha, 
+writing documentation for node and javascript
+trying to make good material for revision`
+
+"Hi, man are you Mnnit's student?" // "' are combined here
 ```
 
 
@@ -417,6 +433,8 @@ let isTyping = false
 - undefined is given by JS engine
 - `null` is assigned by user
 - NaN stands for "Not-a-Number", and it's a special value that represents an undefined or unrepresentable numeric result. It's a property of the global object and is of type number.
+- `undefined` means the variable was never assigned.
+- `null` means you intentionally set it to "nothing".
 
 ```js
 let currentSubject = null   // need to take value, but now
@@ -481,6 +499,12 @@ piggyBank += 4n
 console.log(piggyBank)              // 12324565789000000000004n
 ```
 
+<br>
+<br>
+<br>
+
+<img src="./images/reference vs values.png" width=1200>
+
 ### Reference in (Non-Primitive Data Types)
 - reference -> some pointer pointing to the original value is given 
 - new variable takes the address of the old variable (not a copy)
@@ -509,6 +533,8 @@ console.log(object.name)    // Dog but object was named cat, still changed
 
 <br>
 <br>
+
+<img src="./images/dynamictyping.webp" width=600>
 
 ### Dynamic typing
 - dont need to specify the data type of the variable 
@@ -558,6 +584,7 @@ console.log(typeof [])              // object
 
 ```js
 console.log(typeof null)        // object
+console.log(typeof undefined)   // undefined
 console.log(typeof NaN)         // number
 console.log(NaN === NaN)        // false
 
@@ -580,9 +607,84 @@ console.log(1 === "1")          // false
 - `"5" + 1`: `"51"`, `+` adds and does concatenatation of the values 
 - why : if any value is "string" then js thinks of concatenation, so add is not done
 - but `-` sign does just one thing, substract the values so `"5" - 1` = `4`
+- JavaScript will often auto-convert types behind the scenes.
+- Always stay aware of what data type you’re working with.
+- using `+` and `-` we can convert the string into number
+
+
+```js
+"5" + 1 // "51" → number converted to string
+"5" - 1 // 4 → string converted to number
+true + 1 // 2
+null + 1 // 1
+undefined + 1 // NaN
+
+console.log(typeof + "100")       // number
+console.log(typeof + "sumit")     // failed number conversion => NaN
+
+console.log(undefined + '')       // 'undefined'
+```
+
+
+<br>
+<br>
+
+### NaN – Not a Number
+- `NaN`: Not a Number 
+- some failed numeric operation, which is not a number
+- It is because the operation creates a number even if the result is invalid
+- operations like 0 / 0 or parseInt("abc") still produce a numeric result - just invalid
 
 <br>
 <br>
 
 ### Truthy falsy values
-- 
+- falsy values are false by default in recognition
+- `!!` infront of some values -> gives Truthy or false 
+- `true` for truthy and `false` for falsy
+- eg: `!!0` : false
+- `false`, `""`, `0`, `null`, `NaN`, `document.all`, `undefined`, has nature of false -> falsy
+- everything else is truthy value, `"0"`, `"false"`, `[]`, `{}`, `function(){}`
+- so truthy and falsy are the nature of the values 
+- `-1` is something so it truthy
+
+```js
+// These are some falsy values
+console.log(!!0)              // false
+console.log(!!NaN)            // false
+console.log(!!null)           // false
+console.log(!!document.all)   // false
+console.log(!!undefined)      // false
+
+console.log(+true)            // 1
+console.log(+false)           // 0
+
+console.log(+null)            // 0
+console.log(+undefined)       // NaN
+```
+
+<br>
+<br>
+
+### Loose vs strict equality
+- `==` compares just value with type conversion
+- `===` compares value + type (no conversion)
+- `===` is taken for accurate conversions
+
+```js
+5 == "5"  // true
+5 === "5" // false
+```
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Operators 
+- Operators are special symbols or keywords in JavaScript 
+- They perform operations on values (operands).
+- You’ll use them in calculations, comparisons, logic, assignments, and even type checks.
+- They are like verbs of your code — act on data.
+

@@ -1,4 +1,4 @@
-console.log(typeof null)        // object
+console.log(typeof null)        // object (Known bug)
 console.log(typeof NaN)         // number
 console.log(NaN === NaN)        // false
 
@@ -12,3 +12,4 @@ console.log(1 + "1")            // "11" in string data type
 console.log(1 == "1")           // true
 console.log(1 === "1")          // false
 
+console.log(typeof +"100")

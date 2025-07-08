@@ -45,8 +45,24 @@ abcd()
 let age = 5
 let isBirthday = true
 
-if (isBirthDay) {
+if (isBirthday) {
     let age = 6
     console.log(age)    // 6
 }
 console.log(age)        // 5
+
+
+// ----------------------------------------------------------------------
+
+const accountId = 6388121
+let accountMail = "Sumit@codz.com" // let can be changed 
+var accountPassword = 12345 // var is also variable 
+let accountState; // without definition => contains an undefined 
+
+accountCity = "Bangaluru" // direct variable declaration
+accountMail = "sz@codz.com"
+accountPassword = 213221
+accountCity = "Jaipur"
+
+console.log(accountId); // table like consoling
+console.table([accountId, accountMail, accountPassword, accountCity, accountState])

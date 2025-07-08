@@ -32,6 +32,12 @@ let naam = 'sumitjha'
 let gender = `male`
 let lastname = "jha"
 
+// multiple line string using backticks ``
+console.log(`Hello, 
+I am Sumit Kumar Jha, 
+writing documentation for node and javascript
+trying to make good material for revision`)
+
 
 // number 
 let a = 10
