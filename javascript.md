@@ -839,5 +839,53 @@ console.log(B instanceof Object)        // true
 console.log(B instanceof Array)         // false
 ```
 
+<br>
+<br>
+<br>
+<br>
+<br>
 
-### Control Flow 
+## Control Flow 
+- which part of code to execute based on some condition
+- for truthy value the if case runs otherwise goes down in else-if parts 
+- if all the if and else ifs dont work then the else part works 
+- Control flow decides which code runs, when it runs, and how many times it runs.
+- It's like decision-making + direction in your JavaScript program.
+
+```js
+if (condition) {
+    // runs if condition is true
+} else if (anotherCondition) {
+    // runs if first was false, second is true
+} else {
+    // runs if none are true
+}
+```
+
+- for getting marks conditional flow
+
+```js
+let marks = 78;
+if (marks >= 90) {
+    console.log("A");
+} else if (marks >= 75) {
+    console.log("B");
+} else {
+    console.log("C");
+}
+```
+
+### using return in if else we directly get out 
+- early return 
+- return simply terminates out of the function 
+- so the flow of the function can be also decided by the return statement 
+
+```js
+function getRank(val){
+    if(val <= 25) return "D";
+    else if(val <= 50) return "C";
+    else if(val <= 75) return "B";
+    else return "A";
+}
+```
+
