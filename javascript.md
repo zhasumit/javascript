@@ -687,4 +687,157 @@ console.log(+undefined)       // NaN
 - They perform operations on values (operands).
 - You’ll use them in calculations, comparisons, logic, assignments, and even type checks.
 - They are like verbs of your code — act on data.
+- JavaScript will often auto-convert types behind the scenes. beware of what are you using
 
+### Arithmetic operators 
+- for doing basic mathematical arithmetic operations
+- `+`, `-`, `*`, `/`, `%`, `**`
+- `+` addition
+- `-` subtraction
+- `*` multiplication
+- `/` division
+- `%` modulus (remainder)
+- `**` exponentiation (ES2016)
+
+```js
+// arithmetic operators 
+console.log(5 + 2); // 7
+console.log(5 - 2); // 3
+console.log(5 * 2); // 10
+console.log(5 / 2); // 2.5
+console.log(5 % 2); // 1
+console.log(5 ** 2); // 25
+```
+<br>
+<br>
+
+### assignment operators 
+- `=`, `+=`, `-=`, `*=`, `/=`, `%=`
+- for assigning some values 
+- with arithmetic operators it is a shorthand for performing and assigning values
+- `=` assignment
+- `+=` addition and assignment
+- `-=` subtraction and assignment
+- `*=` multiplication and assignment
+- `/=` division and assignment
+- `**=`exponentiation and assignment
+- `%=` modulus and assignment
+
+```js
+let a = 5; // assignment
+let b = 10; // assignment
+
+console.log(a +=b ); // 15 (addition and assignment)
+console.log(a -= b); // 5 (subtraction and assignment)
+console.log(a *= b); // 50 (multiplication and assignment)
+console.log(a /= b); // 5 (division and assignment)
+console.log(a %= b); // 5 (modulus and assignment)
+console.log(a **= b); // 9765625 (exponentiation and assignment)
+```
+
+### comparision operator
+- `<`, `>`, `<=`, `>=`, `!=`, `!==`, `!!`, `==`, `===`
+- `==` equal to
+- `===` equal value and type
+- `!=` not equal to
+- `!==` not equal value or type
+- `>` greater than
+- `<` less than
+- `>=` greater than or equal to
+- `<=` less than or equal to
+
+```js
+console.log(5 == '5'); // true (equal to)
+console.log(5 === '5'); // false (equal value and type)
+console.log(5 != '5'); // false (not equal to)
+console.log(5 !== '5'); // true (not equal value or type)
+console.log(5 > 2); // true (greater than)
+console.log(5 < 2); // false (less than)
+console.log(5 >= 5); // true (greater than or equal to)
+console.log(5 <= 5); // true (less than or equal to)
+```
+### logical operators 
+- `&&`, `||`, `!`
+- `&&` logical AND
+- `||` logical OR
+- `!` logical NOT
+
+```js
+console.log(true && false); // false
+console.log(true || false); // true 
+console.log(!true); // false 
+```
+
+### Double negation operator
+- double neagation for checking if the value is truthy or falsy 
+- first `!` makes the value opposite -> true to false and false to true
+- now second `!` makes it flip again -> false to true and true to false 
+
+```js
+console.log(!!5); // true (5 is truthy)
+console.log(!!0); // false (0 is falsy)
+```
+
+### typeof operator
+- gives the type of data used in the variable 
+- since the data type can be changing and is dynamic
+
+```js
+console.log(typeof 5); // "number"
+console.log(typeof 'hello'); // "string"
+console.log(typeof true); // "boolean"
+console.log(typeof null); // "object"
+console.log(typeof undefined); // "undefined"
+console.log(typeof Symbol('symbol')); // "symbol"
+console.log(typeof BigInt(12345678901234567890)); // "bigint"
+```
+
+### Unary operator
+- `+` tries to convert to a number 
+- `-` negates 
+- `++` increment 
+- `--` decrement 
+
+```js
+console.log(+"5") // 5
+console.log(-"5") // -5
+let count = 5;
+console.log(++count); // 6 (increment)
+console.log(--count); // 5 (decrement)
+```
+
+
+### Ternary operator
+- `?:` conditional (ternary) operator
+-  `?:`  evaluates a condition and returns one of two values based on the condition
+
+```js
+const condition = true;
+const result = condition ? 'Condition is true' : 'Condition is false';
+console.log(result); // "Condition is true"
+
+12 > 13 ? console.log("Hui Hui") : console.log("Nui Nui");
+```
+
+### instance of 
+- instanceof  checks if an object is an instance of a constructor function
+- doesnot work with values (only with reference values)
+
+```js
+class Person { }
+const person = new Person();
+console.log(person instanceof Person);  // true
+console.log(person instanceof Object);  // true
+console.log([] instanceof Array);       // true
+console.log({} instanceof Object);      // true
+
+let A = [];
+console.log(A instanceof Array)         // true
+
+let B = {}
+console.log(B instanceof Object)        // true
+console.log(B instanceof Array)         // false
+```
+
+
+### Control Flow 
