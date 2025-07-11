@@ -876,9 +876,10 @@ if (marks >= 90) {
 ```
 
 ### using return in if else we directly get out 
-- early return 
+- early return statement
 - return simply terminates out of the function 
 - so the flow of the function can be also decided by the return statement 
+- This avoids deep nesting and makes logic cleaner.
 
 ```js
 function getRank(val){
@@ -889,3 +890,55 @@ function getRank(val){
 }
 ```
 
+### switch case 
+- has some value on which switch is acting 
+- Great for checking one variable against many values.
+
+```js
+switch (value) {
+    case value1:
+    // code
+break;
+    case value2:
+    // code
+break;
+    default:
+    // fallback
+}
+```
+
+- swithc for some fruit
+- checking the value for the fruit string
+
+```js
+let fruit = "apple";
+switch (fruit) {
+    case "banana":
+        console.log("Yellow");
+        break;
+    case "apple":
+        console.log("Red");
+        break;
+    default:
+        console.log("Unknown");
+}
+```
+
+<br>
+<br>
+<br>
+
+### Rock paper scissor
+- user and computer select rock paper and scissor and decide who wins 
+
+```js
+function rps(user, bot) {
+    if (user === bot) return;
+
+    if (user === "rock" && bot === "scissor") return "user";
+    if (user === "scissor" && bot === "paper") return "user";
+    if (user === "paper" && bot === "rock") return "user";
+
+    return "bot";
+}
+```
